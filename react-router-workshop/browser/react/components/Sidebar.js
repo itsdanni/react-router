@@ -10,7 +10,10 @@ const Sidebar = (props) => {
       <img src="juke.svg" className="logo" />
       <section>
         <h4 className="menu-item active">
-          <Link to="/albums">ALBUMS</Link>
+          <ul className='list-unstyled'>
+            <li><Link to="/albums">ALBUMS</Link></li>
+            <li><Link to="/artists">ARTISTS</Link></li>
+          </ul>
         </h4>
       </section>
     </sidebar>
