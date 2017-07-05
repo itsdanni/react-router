@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 
 export default class AllAlbums extends Component {
   render () {
-    const albums = this.state.albums;
+    const albums = this.props.albums;
 
     return (
       <div>

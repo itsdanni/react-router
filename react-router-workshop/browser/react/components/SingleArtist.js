@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import Songs from '../components/Songs';
 import axios from 'axios';
+import AllAlbums from './AllAlbums';
+import { Link } from 'react-router-dom';
 
 export default class SingleArtist extends Component {
   constructor () {
@@ -33,10 +35,13 @@ export default class SingleArtist extends Component {
 
     return (
     <div>
-      <h3>{artist.name}</h3>
-      <h4>ALBUMS</h4>
-      <h4>SONGS</h4>
-      <Songs songs={songs} />
+      <h3>{ artist.name }</h3>
+      <ul className="nav nav-tabs">
+        <li><Link to="TODO">ALBUMS</Link></li>
+        <li><Link to="TODO">SONGS</Link></li>
+      </ul>
+
+      {/* Routes will go here! */}
     </div>);
   }
 }
