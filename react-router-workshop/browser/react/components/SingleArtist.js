@@ -36,15 +36,18 @@ export default class SingleArtist extends Component {
     console.log('albums', albums);
 
     return (
-    <div>
-      <h3>{ artist.name }</h3>
-      <ul className="nav nav-tabs">
-        <li><Link to={`/artists/${artist.id}/albums`}>ALBUMS</Link></li>
-        <li><Link to={`/artists/${artist.id}/songs`}>SONGS</Link></li>
-      </ul>
-       <Route exact path="/artists/:artistId/albums" render={(routeProps) => <AllAlbums albums={albums} />} />
-       <Route exact path="/artists/:artistId/songs" render={(routeProps) => <Songs songs={songs} />} />
+      <HashRouter>
+        <div>
+          <h3>{ artist.name }</h3>
+          <ul className="nav nav-tabs">
+            <li><Link to={`/artists/${artist.id}/albums`}>ALBUMS</Link></li>
+            <li><Link to={`/artists/${artist.id}/songs`}>SONGS</Link></li>
+          </ul>
 
-    </div>);
+           <Route exact path="/artists/:artistId/albums" render={(routeProps) => <AllAlbums albums={this.state.artistAlbums} />} />
+           <Route exact path="/artists/:artistId/songs" render={(routeProps) => <Songs songs={this.state.artistSongs} />} />
+        </div>
+      </HashRouter>
+    );
   }
 }
