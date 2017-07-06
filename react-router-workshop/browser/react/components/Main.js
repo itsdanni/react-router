@@ -27,7 +27,7 @@ export default class Main extends Component {
               <Route exact path='/albums' component={StatefulAlbums}></Route>
               <Route path='/albums/:albumId' component={SingleAlbum}></Route>
               <Route exact path='/artists' component={AllArtists}></Route>
-              <Route exact path='/artists/:artistId' component={SingleArtist}></Route>
+              <Route path='/artists/:artistId' component={SingleArtist}></Route>
             </div>
 
           <Player />
