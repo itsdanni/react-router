@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 const Sidebar = (props) => {
 
@@ -11,8 +11,8 @@ const Sidebar = (props) => {
       <section>
         <h4 className="menu-item active">
           <ul className='list-unstyled'>
-            <li><Link to="/albums">ALBUMS</Link></li>
-            <li><Link to="/artists">ARTISTS</Link></li>
+            <li><NavLink to="/albums" activeClassName="selected">ALBUMS</NavLink></li>
+            <li><NavLink to="/artists" activeClassName="selected">ARTISTS</NavLink></li>
           </ul>
         </h4>
       </section>

@@ -1,12 +1,10 @@
 import React, { Component } from 'react';
 import axios from 'axios';
-import { Link } from 'react-router-dom';
+import { NavLink } from 'react-router-dom';
 
 export default class AllAlbums extends Component {
   render () {
     const albums = this.props.albums;
-    console.log('props');
-    console.log(this.props);
 
     return (
       <div>
@@ -15,7 +13,7 @@ export default class AllAlbums extends Component {
         {
           albums.map(album => (
             <div className="col-xs-4" key={ album.id }>
-              <Link to={`/albums/${album.id}`} className="thumbnail">
+              <NavLink to={`/albums/${album.id}`} className="thumbnail" activeClassName="selected">
                 <img src={ album.imageUrl } />
                 <div className="caption">
                   <h5>
@@ -23,7 +21,7 @@ export default class AllAlbums extends Component {
                   </h5>
                   <small>{ album.songs.length } songs</small>
                 </div>
-              </Link>
+              </NavLink>
             </div>
           ))
         }
