@@ -29,7 +29,7 @@ export default class SingleAlbum extends Component {
     return (
       <div className="album">
         <div>
-          <h3>{ album.name } &nbsp; <a href={ mailto }><span className="glyphicon glyphicon-share"></span></a></h3>
+          <h3>{ album.name } <a href={ mailto }><button type="button" className="btn btn-default btn-sm"><span className="glyphicon glyphicon-share"></span></button></a></h3>
           <img src={ album.imageUrl } className="img-thumbnail" />
         </div>
         <Songs songs={album.songs} />
