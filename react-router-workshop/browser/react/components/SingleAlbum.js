@@ -1,6 +1,10 @@
 import React, { Component } from 'react';
 import Songs from '../components/Songs';
 import axios from 'axios';
+import {
+  Link,
+  Route
+} from 'react-router-dom';
 
 export default class SingleAlbum extends Component {
   constructor() {
@@ -20,11 +24,12 @@ export default class SingleAlbum extends Component {
 
   render () {
     const album = this.state.selectedAlbum;
+    const mailto = `mailto:?subject=${album.name}&body=Check out this album: http://localhost:1337/#/albums/${album.id}`;
 
     return (
       <div className="album">
         <div>
-          <h3>{ album.name }</h3>
+          <h3>{ album.name } &nbsp; <a href={ mailto }><span className="glyphicon glyphicon-share"></span></a></h3>
           <img src={ album.imageUrl } className="img-thumbnail" />
         </div>
         <Songs songs={album.songs} />
